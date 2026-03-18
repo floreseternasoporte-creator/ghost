@@ -48,14 +48,9 @@ const noise3D = createNoise3D()
   everything as just THREE but but I 
   prefer to just grab what I need.
   
-  You'll notice I'm just importing these
-  from just 'three' rather than the skypack
-  url. Thats because I have included an 
-  'importmap' to the html <head>. You
-  can see that in the settings under HTML.
-  
-  I could have probably done the same for
-  others. 
+  We import these directly from a CDN URL
+  so the game runs without requiring an
+  HTML import map/bundler setup.
 */
 
 import {
@@ -103,20 +98,20 @@ import {
   LoadingManager,
   TextureLoader,
   AudioLoader,
-} from "three"
+} from "https://unpkg.com/three@0.159.0/build/three.module.js"
 
 /*
   Some extra bits we need from Three.js.
 */
 
-import { OrbitControls } from "three/addons/controls/OrbitControls.js"
-import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js"
-import { RenderPass } from "three/addons/postprocessing/RenderPass.js"
-import { SSAOPass } from "three/addons/postprocessing/SSAOPass.js"
-import { GUI } from "three/addons/libs/lil-gui.module.min.js"
-import Stats from "three/addons/libs/stats.module.js"
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader"
-import { DRACOLoader } from "three/addons/loaders/DRACOLoader"
+import { OrbitControls } from "https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js"
+import { EffectComposer } from "https://unpkg.com/three@0.159.0/examples/jsm/postprocessing/EffectComposer.js"
+import { RenderPass } from "https://unpkg.com/three@0.159.0/examples/jsm/postprocessing/RenderPass.js"
+import { SSAOPass } from "https://unpkg.com/three@0.159.0/examples/jsm/postprocessing/SSAOPass.js"
+import { GUI } from "https://unpkg.com/three@0.159.0/examples/jsm/libs/lil-gui.module.min.js"
+import Stats from "https://unpkg.com/three@0.159.0/examples/jsm/libs/stats.module.js"
+import { GLTFLoader } from "https://unpkg.com/three@0.159.0/examples/jsm/loaders/GLTFLoader.js"
+import { DRACOLoader } from "https://unpkg.com/three@0.159.0/examples/jsm/loaders/DRACOLoader.js"
 
 /*
   And finally we need to import xState.
