@@ -20,6 +20,12 @@
           class="spell"
           d="M48.8852 110L47.4198 2L1 65.6158L85 65.6158L85 110"
         />
+        <path
+          id="spell-shape-avadacabra"
+          data-spell="avadacabra"
+          class="spell"
+          d="M22 3L90 3L52 47L118 47L30 122L58 72L3 72L22 3"
+        />
 
         <path id="check" d="M9.44172 20L0 10.5198L2.36043 8.14969L9.44172 15.2599L24.6396 0L27 2.37006L9.44172 20Z" fill="white"/>
         
@@ -161,6 +167,24 @@
                 <p data-flip-spell>Opens a vortex that sucks in all the demons in the room. This one takes a while to charge so choose when to use it wisely!</p>
               </div>
             </div>
+
+            <div class="spell-details">
+              <div class="spell-path" id="spell-svg-viz-avadacabra">
+                <svg class="check" xmlns="http://www.w3.org/2000/svg" width="27" height="20" viewBox="0 0 27 20" fill="none">
+                  <use href="#check" />
+                </svg>
+                <svg data-flip-spell xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130" fill="none">
+                  <path class="guide-path" d="M22 5H90L52 49H118L30 124L58 74H5L22 5" stroke-width="4"/>
+                  <path id="spell-path-viz-avadacabra" class="charge-path" d="M22 5H90L52 49H118L30 124L58 74H5L22 5" stroke="#9DFF8E"/>
+                  <circle cx="22" cy="5" r="5" fill="#9DFF8E"/>
+                  <path d="M40 114L28 124L42 126" stroke="#9DFF8E" stroke-width="4"/>
+                </svg>
+              </div>
+              <div class="info">
+                <h4 data-flip-spell>Avadacabra</h4>
+                <p data-flip-spell>Una maldición verde devastadora. Dispara rayos oscuros que eliminan hasta tres demonios, pero tarda más en recargarse.</p>
+              </div>
+            </div>
              
         </div>
 
@@ -246,7 +270,7 @@
 
         <div data-screen="INSTRUCTIONS_SPELLS" class="instructions-spells">
           <div class="content">
-            <p data-fade>You possess three potent spells: Arcane, Fire, and Vortex. Each wields unique power, but beware, they take time to recharge.</p>
+            <p data-fade>You possess four potent spells: Arcane, Fire, Vortex, and Avadacabra. Each wields unique power, but beware, they take time to recharge.</p>
             <p data-fade>Now, stand tall and protect the crystal. The fate of our world rests in your hands.</p>
             <button data-fade data-send="next">Start</button>
           </div>
@@ -351,6 +375,15 @@
           <div>
             <svg class="spell-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 111" fill="none">
               <use href="#spell-shape-vortex" />
+            </svg>
+            <div class="score">0</div>
+          </div>
+        </div>
+        <div class="spell-stat" data-spell-shape="spell-shape-avadacabra">
+          <h2>Avadacabra</h2>
+          <div>
+            <svg class="spell-preview" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121 125" fill="none">
+              <use href="#spell-shape-avadacabra" />
             </svg>
             <div class="score">0</div>
           </div>
