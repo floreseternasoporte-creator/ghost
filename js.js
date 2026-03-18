@@ -307,6 +307,7 @@ const SPELLS = {
   arcane: "arcane",
   fire: "fire",
   vortex: "vortex",
+  avadacabra: "avadacabra",
 }
 
 /*
@@ -1436,8 +1437,8 @@ class Emitter {
 }
 
 class ArcaneSpellEmitter extends Emitter {
-  constructor(sim, light, startPosition, enemy) {
-    const color = { r: 0.2, g: 0, b: 1 }
+  constructor(sim, light, startPosition, enemy, colorOverride = null) {
+    const color = colorOverride ? colorOverride : { r: 0.2, g: 0, b: 1 }
 
     const settings = {
       // model: ASSETS.getModel("parrot"),
@@ -5362,6 +5363,12 @@ class SpellCaster {
         svg: this.spellsInfoElement.querySelector("#spell-svg-viz-vortex"),
         path: this.spellsInfoElement.querySelector("#spell-path-viz-vortex"),
       },
+      avadacabra: {
+        charge: 0,
+        rechargeRate: 0.04,
+        svg: this.spellsInfoElement.querySelector("#spell-svg-viz-avadacabra"),
+        path: this.spellsInfoElement.querySelector("#spell-path-viz-avadacabra"),
+      },
     }
 
     this.spellNames = Object.keys(this.spellStates)
@@ -5848,6 +5855,8 @@ void main()
         return { r: 0.2, g: 0, b: 1 }
       case "fire":
         return { r: 1, g: 0.8, b: 0 }
+      case "avadacabra":
+        return { r: 0.2, g: 1, b: 0.2 }
       case "vortex":
       default:
         return { r: 0, g: 1, b: 0 }
@@ -6838,6 +6847,19 @@ class App {
                   let fireEnemies = this.getEnemy(spellID, 2)
                   fireEnemies.forEach((enemy) => {
                     let spell = new FireSpellEmitter(this.sim, this.spellLight, this.spellCaster.emitPoint, enemy)
+                    this.addEmitter(spell)
+                  })
+                  break
+                case "avadacabra":
+                  let avadacabraEnemies = this.getEnemy(spellID, 3)
+                  avadacabraEnemies.forEach((enemy) => {
+                    let spell = new ArcaneSpellEmitter(
+                      this.sim,
+                      this.spellLight,
+                      this.spellCaster.emitPoint,
+                      enemy,
+                      { r: 0.2, g: 1, b: 0.2 }
+                    )
                     this.addEmitter(spell)
                   })
                   break
